@@ -646,14 +646,79 @@ a{
 }
 
 .section-contacts{
+    
+    overflow: hidden;
+
+    .container{
+        position:relative;
+        &::before{
+            content:"";
+            position:absolute;
+            background:url('../img/tomatoes.jpg') no-repeat;
+            background-size:cover;
+            width:672px;
+            height:397px;
+            bottom:-200px;
+            right:-350px;
+
+            @media(max-width:$breakpoint-lg){
+                content:none;
+            }
+        
+        }
+    }
+
+   
     &__title{
         font-family: 'Montserrat', sans-serif;
         font-size:18px;
         font-weight: 900;
+        margin-bottom: 10px;
+
+        @media(max-width:$breakpoint-sm){
+            font-size:26px;
+        }
     }
 
-    &__text{
+    &__right{
         font-size:18px;
+        padding-left:30px;
+
+        @media(max-width:$breakpoint-sm){
+            margin-bottom: 20px;
+            order:1;
+        }
+    }
+
+    &__block{
+        margin-right: 5px;
+        &:last-child{
+            margin-right: 0;
+        }
+
+        @media(max-width:$breakpoint-sm){
+            margin-right: 15px;
+        }
+    }
+
+    .svg-main{
+        width:32px;
+        height:32px;
+        transition:.2s linear;
+        &:hover{
+            .svg{
+                fill:#1f1f1f;
+            }
+        }
+
+        @media(max-width:$breakpoint-sm){
+            width:56px;
+            height:56px;
+        }
+    }
+    .svg{
+        fill:#FFA650;
+        transition:.2s linear;
     }
 
     &__socials{
@@ -661,16 +726,54 @@ a{
     }
     &__content{
         display:flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        p{
+            margin:0;
+
+            @media(max-width:$breakpoint-sm){
+                font-size:24px;
+            }
+        }
+
+      
+    }
+
+    &__item{
+        margin-bottom: 60px;
+        &:last-child{
+            margin-bottom: 0;
+        }
     }
 
     &__map{
-        flex-basis: 50%;
+        width:50%;
         height:450px;
         background:#fef0b4;
         object-fit: cover;
+
+        @media(max-width:$breakpoint-md){
+            height:350px;
+        }
+
+        @media(max-width:$breakpoint-sm){
+            width:100%;
+            order:2;
+        }
     }
 
     &__text{
         flex-basis:50%;
     }
+}
+
+.footer{
+    background:linear-gradient(90deg, rgb(43,43,43) 0%, rgb(31,31,31) 100%);
+    color:#676767;
+    font-family: 'Montserrat', sans-serif;
+    font-size:18px;
+
+    padding: 30px 0;
+    text-align: center;
 }

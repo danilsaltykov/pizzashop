@@ -595,14 +595,90 @@ a {
   }
 }
 
+.section-contacts {
+  overflow: hidden;
+}
+
+.section-contacts .container {
+  position: relative;
+}
+
+.section-contacts .container::before {
+  content: "";
+  position: absolute;
+  background: url("../img/tomatoes.jpg") no-repeat;
+  background-size: cover;
+  width: 672px;
+  height: 397px;
+  bottom: -200px;
+  right: -350px;
+}
+
+@media (max-width: 1200px) {
+  .section-contacts .container::before {
+    content: none;
+  }
+}
+
 .section-contacts__title {
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   font-weight: 900;
+  margin-bottom: 10px;
 }
 
-.section-contacts__text {
+@media (max-width: 767px) {
+  .section-contacts__title {
+    font-size: 26px;
+  }
+}
+
+.section-contacts__right {
   font-size: 18px;
+  padding-left: 30px;
+}
+
+@media (max-width: 767px) {
+  .section-contacts__right {
+    margin-bottom: 20px;
+    order: 1;
+  }
+}
+
+.section-contacts__block {
+  margin-right: 5px;
+}
+
+.section-contacts__block:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 767px) {
+  .section-contacts__block {
+    margin-right: 15px;
+  }
+}
+
+.section-contacts .svg-main {
+  width: 32px;
+  height: 32px;
+  transition: .2s linear;
+}
+
+.section-contacts .svg-main:hover .svg {
+  fill: #1f1f1f;
+}
+
+@media (max-width: 767px) {
+  .section-contacts .svg-main {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+.section-contacts .svg {
+  fill: #FFA650;
+  transition: .2s linear;
 }
 
 .section-contacts__socials {
@@ -611,16 +687,58 @@ a {
 
 .section-contacts__content {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.section-contacts__content p {
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .section-contacts__content p {
+    font-size: 24px;
+  }
+}
+
+.section-contacts__item {
+  margin-bottom: 60px;
+}
+
+.section-contacts__item:last-child {
+  margin-bottom: 0;
 }
 
 .section-contacts__map {
-  flex-basis: 50%;
+  width: 50%;
   height: 450px;
   background: #fef0b4;
   object-fit: cover;
 }
 
+@media (max-width: 992px) {
+  .section-contacts__map {
+    height: 350px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-contacts__map {
+    width: 100%;
+    order: 2;
+  }
+}
+
 .section-contacts__text {
   flex-basis: 50%;
+}
+
+.footer {
+  background: linear-gradient(90deg, #2b2b2b 0%, #1f1f1f 100%);
+  color: #676767;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  padding: 30px 0;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
